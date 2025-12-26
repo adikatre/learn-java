@@ -1,4 +1,4 @@
-package diagnostic_frq;
+package diagfrq;
 
 public class diceSimulation {
     private int numSampleSize;

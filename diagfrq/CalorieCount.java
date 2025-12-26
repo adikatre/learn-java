@@ -1,4 +1,4 @@
-package diagnostic_frq;
+package diagfrq;
 
 public class CalorieCount {
     private int calLimit = 0;
