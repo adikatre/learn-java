@@ -2,9 +2,8 @@ package frq;
 
 public class SignedText {
 
-    private String first = "";
-    private String last = "";
-    private String temp = "";
+    private String first;
+    private String last;
 
     public SignedText(String a, String b) {
         first = a;
@@ -12,37 +11,27 @@ public class SignedText {
     }
 
     public String getSignature() {
-        if (!("".equals(first))) {
+        if (!first.equals("")) {
             return first.substring(0, 1) + "-" + last;
-        } else {
-            return last;
         }
+        return last;
     }
 
     public String addSignature(String text) {
-        int index = text.indexOf(getSignature());
+        String sig = getSignature();
+        int index = text.indexOf(sig);
+
+        // Case 1: signature not present
         if (index == -1) {
-            return text + getSignature();
-        } else if (text.indexOf(getSignature()) == text.length() - getSignature().length()) {
-            return text;
-        } else {
-            String[] tmp = text.split(getSignature());
-            // int start = text.indexOf(getSignature());
-
-            return (tmp[1] + getSignature());
+            return text + sig;
         }
-    }
-
-    public static void main(String[] args) {
-
-        String na = "Mister";
-
-        SignedText st2 = new SignedText("henri", "jones");
-
-        String temp = st2.getSignature();
-
-        System.out.println(temp);
-
-        System.out.println(st2.addSignature(na));
+        // Case 2: signature at start
+        else if (index == 0) {
+            return text.substring(sig.length()) + sig;
+        }
+        // Case 3: signature already at end
+        else {
+            return text;
+        }
     }
 }
