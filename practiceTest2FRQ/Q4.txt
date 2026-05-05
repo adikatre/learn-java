@@ -1,0 +1,11 @@
+public static int [][] eliminateDuplicateRows(int [][] arrWithDups) {
+    
+    int[][] arrNoDups = {}{};
+    
+    for (int row = 0; row < arrwithDups.length(); i++) {
+        for (int row2 = row; row2<arrWithDups.length(); row2++) {
+            if (!(arrWithDups[row1] == arrWithDups[row2]))
+                arrNoDups[arrNoDups.length()] = arrWithDups(row);
+        }
+    }
+}
