@@ -1,0 +1,13 @@
+public String convertWord(String word) {
+    firstLetter = word.substring(0,1);
+    secondLetter = word.substring(1,2);
+    if (isLetterAVowel(firstLetter)) {
+        return (word+"way");
+    }
+    else if (!(isLetterAVowel(firstLetter) && isLetterAVowel(secondLetter)) {
+        return (word.substring(1) + firstLetter + "ay");
+    }
+    else {
+        return (word.substring(2) + firstLetter + secondLetter + "ay");
+    }
+}

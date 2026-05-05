@@ -1,0 +1,17 @@
+public class FrequentFlyerMember {
+    private int flyerNumber;
+    private String name;
+    private int lifeTimeMiles;
+    private int statusLevel;
+
+    public FrequentFlyerMember(int flyerNumber, String name, int lifeTimeMiles, int statusLevel) {
+        this.flyerNumber = flyerNumber;
+        this.name = name;
+        this.lifeTimeMiles = lifeTimeMiles;
+        this.statusLevel = statusLevel;
+    }
+
+    public void addMiles(int miles) {
+        
+    }
+}
