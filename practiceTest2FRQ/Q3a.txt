@@ -1,0 +1,12 @@
+public ArrayList<FactorPair> buildArrayList(int n) {
+    
+    ArrayList<FactorPair> p = new ArrayList<FactorPair>();
+
+    for (int i = 1; i<((n/2) +1); i++) {
+        if (n % i == 0){
+            p.add(FactorPair(i,n/i));
+        }
+    }
+
+    return p;
+}
