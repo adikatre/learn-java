@@ -12,6 +12,19 @@ public class FrequentFlyerMember {
     }
 
     public void addMiles(int miles) {
-        
+        lifeTimeMiles += miles;
+    }
+    
+    public void setStatusLevel(int level) {
+        statusLevel = level;
+    }
+
+    public String getStatusInfo() {
+        // frequent flyer or platinum?
+        String flyerType;
+        if (statusLevel == 1) {flyerType = "frequent flyer"}
+        else {flyerType = "platinum"}
+
+        return (Integer.toString(flyerNumber) + " " + name + " is a " + flyerType + " member with " + Integer.toString(lifeTimeMiles) + " miles");
     }
 }
