@@ -1,0 +1,12 @@
+public ArrayList<String> createList(String target) {
+
+	ArrayList<String> removed = new ArrayList<String>();
+	
+	for (String word : wordList) {
+		if (word.length() >= target.length() && word.substring(0,target.length()).equals(target)) {
+			removed.add(word.substring(target.length()));
+		}
+	}
+	
+	return removed;
+}
