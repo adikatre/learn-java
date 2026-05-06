@@ -1,3 +1,14 @@
-public Location getNextLoc(int rol, int col) {
-    
+public Location getNextLoc(int row, int col) {
+    if (row+1 == grid.length) {
+        return (new Location(row, col+1);
+    }
+    else if (col+1 == grid[0].length) {
+        return (new Location(row+1,col);
+    }
+    else if (grid[row+1][col] < grid[row][col+1] {
+        return (new Location(row+1,col);
+    }
+    else {
+        return (new Location(row,col+1);
+    }
 }
