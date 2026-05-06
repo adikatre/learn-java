@@ -1,0 +1,3 @@
+public Location getNextLoc(int rol, int col) {
+    
+}
