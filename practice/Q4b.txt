@@ -10,7 +10,7 @@ public int sumPath(int row, int col) {
     currentCol = nextLoc.getCol();
   }
   
-  sum += grid[currentRow][currentCol]
+  sum += grid[currentRow][currentCol];
 
   return sum;
 
