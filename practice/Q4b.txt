@@ -1,0 +1,15 @@
+public int sumPath(int row, int col) {
+  int sum = 0;
+  int currentRow = row;
+  int currentCol =  col;
+
+  while (currentRow != grid.length-1 && currentCol != grid[0].length-1) {
+    sum += grid[currentRow][currentCol];
+    Location nextLoc = getNextLoc(currentRow,currentCol);
+    currentRow = nextLoc.getRow();
+    currentCol = nextLoc.getCol();
+  }
+
+  return sum;
+
+}
