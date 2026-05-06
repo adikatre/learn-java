@@ -9,6 +9,8 @@ public int sumPath(int row, int col) {
     currentRow = nextLoc.getRow();
     currentCol = nextLoc.getCol();
   }
+  
+  sum += grid[currentRow][currentCol]
 
   return sum;
 
