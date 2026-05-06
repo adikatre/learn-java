@@ -4,7 +4,7 @@ public String convertWord(String word) {
     if (isLetterAVowel(firstLetter)) {
         return (word+"way");
     }
-    else if (!(isLetterAVowel(firstLetter) && isLetterAVowel(secondLetter)) {
+    else if (!(isLetterAVowel(firstLetter)) && isLetterAVowel(secondLetter)) {
         return (word.substring(1) + firstLetter + "ay");
     }
     else {

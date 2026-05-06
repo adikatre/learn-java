@@ -1,8 +1,8 @@
 public int findMostPairs(Factors f) {
-    ArrayList<FactorsPair> fa1 = f.buildArrayList(this.number);
-    ArrayList<FactorsPair> fa2 = f.buildArrayList(number);
+    ArrayList<FactorsPair> fa1 = this.pairs();
+    ArrayList<FactorsPair> fa2 = f.pairs();
 
     if (fa1.size() == fa2.size()) {return -1}
-    else if (fa1.size()>fa2.size()) {return fa1.size()}
-    else {return fa2.size()}
+    else if (fa1.size()>fa2.size()) {return this.number}
+    else {return f.number}
 }

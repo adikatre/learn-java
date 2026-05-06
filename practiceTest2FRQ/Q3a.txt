@@ -2,9 +2,12 @@ public ArrayList<FactorPair> buildArrayList(int n) {
     
     ArrayList<FactorPair> p = new ArrayList<FactorPair>();
 
-    for (int i = 1; i<((n/2) +1); i++) {
+    for (int i = 1; i<n; i++) {
+        if (n/i >= i) {break}
+
+
         if (n % i == 0){
-            p.add(FactorPair(i,n/i));
+            p.add(new FactorPair(i,n/i));
         }
     }
 

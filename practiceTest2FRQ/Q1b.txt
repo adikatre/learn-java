@@ -1,13 +1,16 @@
 public String convertPhrase() {
-    String[] p = this.phrase.split(" ");
-    string pigPhrase = "";
-    for (int i = 0; i<p.length(); i++) {
-        pigPhrase += convertWord(p[i]);
-    }
-    
+
     if (this.phrase.equals("") || this.phrase == null) {
         return "";
     }
+
+
+    String[] p = this.phrase.split(" ");
+    string pigPhrase = "";
+    for (int i = 0; i<p.length(); i++) {
+        pigPhrase += convertWord(p[i]) + " ";
+    }
+    
 
     return pigPhrase;
 }

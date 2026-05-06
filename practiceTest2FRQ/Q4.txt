@@ -1,11 +1,26 @@
 public static int [][] eliminateDuplicateRows(int [][] arrWithDups) {
     
-    int[][] arrNoDups = {}{};
-    
-    for (int row = 0; row < arrwithDups.length(); i++) {
-        for (int row2 = row; row2<arrWithDups.length(); row2++) {
-            if (!(arrWithDups[row1] == arrWithDups[row2]))
-                arrNoDups[arrNoDups.length()] = arrWithDups(row);
+    ArrayList<Integer> dupRows = new ArrayList<Integer>();
+
+    for (int row1 = 0; row1<arrWithDups.length;row1++) {
+        for (int row2 = row1+1; row2<arrWithDups.length;row2++) {
+            if (arrWithDups[row1][0] == arrWithDups[row2][0] && !(dupRows.contains(row2))) {
+                dupRows.add(row2);
+            }
         }
     }
+
+    int[][] arrNoDups = new int[arrWithDups.length-dupRows.size()][arrWithDups[0].length];
+
+    int i = 0;
+
+    for (int r = 0; r < arrWithDups.length; r++) {
+
+        if (dupRows.contains(r)) {continue;}
+
+        arrNoDups[i] = arrWithDups[r];
+        i++;
+    }
+
+    return arrNoDups;
 }
