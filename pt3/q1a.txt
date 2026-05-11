@@ -1,0 +1,10 @@
+public boolean findEmployeeForChild(Child c) {
+    for (Employee e : employees) {
+        if (e.canTeach(c.getAge()) && e.childrenAssigned() < maxRatio) {
+            e.assignChild(c);
+            return true;
+        } 
+    }
+    
+    return false;
+}
