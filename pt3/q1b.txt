@@ -1,0 +1,9 @@
+public boolean addChild(Child c) {
+    if (findEmployeeForChild(c)) {
+        children.add(c);
+        return true;
+    }
+
+    return false;
+    
+}
