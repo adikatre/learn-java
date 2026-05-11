@@ -1,0 +1,31 @@
+public class Employee {
+
+    private String name;
+    private String role = "unknown";
+    private int salary = 0;
+
+    public Employee(String name, String role, int salary) {
+        this.name = name;
+        this.role = role;
+        this.salary = salary;
+    }
+
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public Employee(String name, String role) {
+        this.name = name;
+        this.role = role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String toString() {
+        return (name + " position is " + role + " salary is " + salary);
+    }
+
+}
