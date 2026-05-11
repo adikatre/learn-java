@@ -1,0 +1,31 @@
+public boolean moveCandyToFirstRow(int col) {
+	if (box[0][col] != null) {
+		return true;
+	}
+	else {
+		for (int i = 0 ; i < box.length ; i ++) {
+			if (box[i][col] != null) {
+				tmp = box[i][col];
+				box[0][col] = tmp;
+				box[i][col] = null;
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+public Candy removeNextByFlavor(String flavor) {
+	for (int r = box.length-1; r > 0; r--) {
+		for (int c = 0; c < box[0].length; c++) {
+			if (box[r][c] != null && box[r][c].getFlavor().equals(flavor)) {
+				Candy tmp = box[r][c];
+				box[r][c] = null;
+				return tmp;
+			}
+		}
+	}
+
+	return null;
+}
