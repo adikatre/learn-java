@@ -1,0 +1,31 @@
+public void cleanData(double lower, double lower) {
+	for (int i = temperatures.size() - 1; i > 0; i--) {
+		if (temperatures.get(i) < lower || temperatures.get(i) > higher) {
+			temperatures.remove(i);
+		}
+	}
+}
+
+public int longestHeatWave(double threshold) {
+	int longestWave = 0;
+	int wave = 0;
+	for (int i=0 ; i < temperatures.size() ; i++) {
+		for (int j = i; j < temperatures.size() ; j++) {
+			if (temperatures.get(j) > threshold) {
+				wave++;
+				continue;
+			}
+			break;
+		}
+
+		if (wave > longestWave) {
+			longestWave = wave;
+		}
+
+		wave = 0;
+
+	}
+
+	return longestWave;
+	
+}

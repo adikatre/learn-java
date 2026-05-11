@@ -1,0 +1,14 @@
+public boolean makeAppointment(int startPeriod, int endPeriod, int duration) {
+    for (int period = startPeriod; period <= endPeriod; period++) {
+
+        int freeBlockDuration = findFreeBlock(period, duration);
+
+        if (freeBlockDuration != -1) {
+            reserveBlock(period, freeBlockDuration, duration);
+            
+            return true;
+        }
+    }
+
+    return false;
+}

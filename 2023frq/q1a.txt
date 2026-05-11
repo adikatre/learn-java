@@ -1,0 +1,23 @@
+public int findFreeBlock(int period, int duration) {
+
+    int consecutive = 0;
+
+    for (int i = 0; i <= 59; i++) {
+
+        boolean isFree = isMinuteFree(period, i);
+
+        if (isFree) {
+            consecutive++;
+        }
+        else {
+            consecutive = 0;
+        }
+        
+        if (consecutive >= duration) {
+            return (i - consecutive + 1);
+        }
+
+    }
+    
+    return -1;
+}
