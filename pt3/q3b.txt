@@ -1,6 +1,6 @@
 public static int countVowels(String name) {
 
-    ArrayList<String> vowels = new ArrayList<String>;
+    ArrayList<String> vowels = new ArrayList<String>();
     vowels.add("a");
     vowels.add("e");
     vowels.add("i");
@@ -9,9 +9,10 @@ public static int countVowels(String name) {
 
     int i = 0;
     int v = 0;
-    while ((i + 1) != name.length()) {
+    while ((i) != name.length()) {
         if (vowels.contains(name.substring(i, i+1)))
             v++;
+        i++;
     }
 
     return v;
