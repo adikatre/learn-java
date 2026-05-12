@@ -1,0 +1,3 @@
+public static String getLastName(String name) {
+    return (name.split(" ")[1]);
+}
