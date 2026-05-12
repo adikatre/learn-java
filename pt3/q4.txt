@@ -1,0 +1,14 @@
+public boolean parkCar(Car newCar) {
+    if (openSpaces >= 1) {
+        for (int r = 0; r < lot.length; r++) {
+            for (int c = 0; c < lot[0].length; c++) {
+                if (lot[r][c] == null) {
+                    lot[r][c] = newCar;
+                    return true;
+                }
+            }
+        }
+    }
+    else
+        return false;
+}
