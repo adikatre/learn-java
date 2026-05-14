@@ -1,0 +1,130 @@
+1 (2022).
+
+public int getScore() {
+	boolean g1 = levelOne.goalReached(); // true
+	boolean g2 = levelTwo.goalReached(); // false
+	boolean g3 = levelThree.goalReached(); // true
+	
+int score = 0;
+
+if (g1)
+	score += levelOne.getPoints(); // += 200
+if (g1 && g2)
+	score += levelTwo.getPoints(); // no
+if (g1 && g2 && g3)
+	score += levelThree.getPoints(); // no
+
+if (isBonus()) // true
+	score = score * 3; //score = 600
+
+return score; //600
+
+}
+
+public playManyTimes (int num) {
+	int highScore = 0;
+	int s = 0;
+	
+	for (int i = 0; i < num; i++) {
+		Game g = new Game;
+		g.play();
+		s = g.getScore();
+		if (s > highScore) {
+			highScore = s;
+}
+}
+
+return highScore;
+}
+
+2 (2021).
+
+public class CombinedTable {
+
+	private SingleTable t1;
+	private SingleTable t2;
+
+	private int h1;
+	private int h2;
+
+private int seats;
+
+	public CombinedTable(SingleTable t1, SingleTable t2) {
+		t1 = this.t1;
+		t2 = this.t2;
+
+		h1 = t1.getHeight();
+		h2 = t2.getHeight();
+
+		seats = t1.getNumSeats() + t2.getNumSeats() -2;
+}
+
+public boolean canSeat(int people) {
+	if (seats <= people)
+		return true;
+	return false;
+}
+
+public double getDesirability() {
+	if (h1 == h2) {
+		return ((double)(t1.getViewQuality()+t2.getViewQuality()))/2;
+}
+return ((((double)(t1.getViewQuality() + t2.getViewQuailty()))/2)-10);
+}
+
+}
+
+3 (2022).
+
+public double getAverageRating() {
+	int sum = 0;
+	for (int i = 0; i < allReviews.length; i++) {
+		sum += allReviews[i].getRating();
+}
+
+return (double) sum / allReviews.length;
+}
+
+public ArrayList<String> collectComments() {
+	ArrayList<String> comments = new ArrayList<String>();
+
+	for (int i = 0; i < allReviews.length; i++) {
+		Review r = allReviews[i];
+		String f = r.getComment().substring(r.getComment().length()-1, r.getComment().length());
+		
+		if (r.getComment().contains(“!”) || r.getComment.contains(“.”)) {
+			if (f.equals(“!”) || f.equals(“.”))
+				comments.add(r.getComment());
+			comments.add(r.getComment() + “.”);
+}
+
+}
+
+return comments;
+
+}
+
+4 (2022).
+
+public void repopulate() {
+	for (int r = 0; r < grid.length; r++) {
+		for (int c = 0; c < grid[0].length; c++) {
+			int value = (int)(Math.random()*10);
+			grid[r][c] = value;
+}
+}
+}
+
+
+public int countIncreasingCols() {
+	int iCols = 0;
+
+	for (int c = 0; c < grid[0].length; c++) {
+		for (int r = 1; r < grid.length; r++) {
+			if (grid[r][c] < grid[r-1][c]) {break;}
+			iCols++;
+}
+}
+
+return iCols;
+}
